@@ -396,5 +396,14 @@ namespace MesabrookAPIQueryTool
             get => _queryResults;
             set => SetProperty(ref _queryResults, value);
         }
+
+        private bool _areNodesExpanded;
+        public bool AreNodesExpanded
+        {
+            get => _areNodesExpanded;
+            set => SetProperty(ref _areNodesExpanded, value);
+        }
+
+        public ICommand ToggleNodeExpandedCommand => new RelayCommand(() => AreNodesExpanded = !AreNodesExpanded);
     }
 }
